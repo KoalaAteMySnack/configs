@@ -1,0 +1,54 @@
+#!/bin/bash
+
+## arrays
+apps=(bspwm gtk-3.0 neofetch latexmk polybar sxhkd termite)
+apps_configs=(bspwm/bspwmrc gtk-3.0/gtk.css neofetch/config.conf latexmk/latexmkrc polybar/config polybar/launch.sh sxhkd/sxhkdrc termite/config)
+home=(.bashrc .bash_profile .vimrc .xinitrc)
+home_configs=(bash/.bashrc bash/.bash_profile vim/.vimrc xorg/.xinitrc)
+
+## check if the config directories exist inside of $HOME/.config
+for i in ${apps[@]} ; do
+	if [ ! -d $HOME/.config/$i ] ; then
+		mkdir $HOME/.config
+		echo "=> $i directory created"
+	else
+		echo "... $i directory exists"
+	fi
+done
+
+## check if the files exist inside of $HOME
+for i in ${home[@]} ; do
+	if [ -f $HOME/$i ] ; then
+		rm $HOME/$i
+		echo "=> $i removed"
+	else
+		echo "... $i doesn't exist"
+	fi
+done
+
+## check if config files exist in $HOME/.config
+## symlink the configs
+for i in ${apps_configs[@]} ; do
+	if [ -f $HOME/.config/$i ] ; then
+		rm $HOME/.config/$i
+		echo "=> $i removed"
+	else
+		echo "... $i doesn't exist"
+	fi
+	if ln -sf $HOME/repositories/configs/$i $HOME/.config/$i ; then
+		echo "=> $i symlink success"
+	else
+		echo "[X] $i symlink failed"
+	fi
+done
+
+## symlink $HOME configs
+C=0
+while [ $C -lt ${#home[@]} ] ; do
+	if ln -sf $HOME/repositories/configs/${home_configs[$C]} $HOME/${home[$C]} ; then
+		echo "=> ${home_configs[$C]} symlink success"
+	else
+		echo "[X] ${home_configs[$C]} symlink failed"
+	fi
+	let C=C+1
+done

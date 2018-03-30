@@ -1,0 +1,159 @@
+[colors]
+background = #000000
+background-alt = #444
+foreground = #f5f5f5
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/myBar]
+width = 100%
+height = 20
+radius = 0.0
+fixed-center = false
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 3
+line-color = #f00
+border-size = 0
+border-color = #00000000
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+font-0 = AnonymousPro:pixelsize=8;1
+modules-left = bspwm xwindow
+modules-center = date
+modules-right = wlan eth memory battery volume
+tray-position = right
+tray-padding = 2
+tray-transparent = true
+tray-background = #0063ff
+wm-restack = bspwm
+override-redirect = false
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:10:...%
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 2
+label-occupied = %index%
+label-occupied-padding = 2
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "M: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% %local_ip%
+format-connected-prefix = "W: "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 0
+ramp-signal-1 = 1
+ramp-signal-2 = 2
+ramp-signal-3 = 3
+ramp-signal-4 = 4
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp1s0f1
+interval = 3.0
+format-connected-prefix = "E: "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+[module/date]
+type = internal/date
+interval = 5
+date = " %Y-%m-%d"
+time = %H:%M
+label = %date% %time%
+
+[module/volume]
+type = internal/alsa
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+format-muted-prefix = ". "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+bar-volume-width = 20
+bar-volume-foreground-0 = #f5f5f5
+bar-volume-foreground-1 = #f5f5f5
+bar-volume-foreground-2 = #f5f5f5
+bar-volume-foreground-3 = #f5f5f5
+bar-volume-foreground-4 = #f5f5f5
+bar-volume-foreground-5 = #f5f5f5
+bar-volume-foreground-6 = #f5f5f5
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = -
+bar-volume-fill-font = 2
+bar-volume-empty = .
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 98
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full = <label-full>
+format-full-prefix = "B: "
+format-full-prefix-foreground = ${colors.foreground-alt}
+label-full = Full %percentage%%
+format-discharging-prefix = "B: "
+format-discharging-prefix-foreground = ${colors.foreground-alt}
+label-discharging = Discharging %percentage%%
+label-charging = Charging %percentage%%
+format-charging-prefix = "B: "
+format-charging-prefix-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
