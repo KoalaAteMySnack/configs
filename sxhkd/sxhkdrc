@@ -131,4 +131,4 @@ super + {Left,Down,Up,Right}
 ##
 
 super + q
-	lockbsp	
+	$HOME/bin/lockbsp
