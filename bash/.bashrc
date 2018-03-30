@@ -12,3 +12,4 @@ screenfetch
 
 alias mirrors="mirrorListGrab"
 alias watchtex="termite -e 'vim $1' --hold & latexmk -pdf -pvc $1 && latexmk -c"
+alias lockbsp="systemctl suspend && physlock"

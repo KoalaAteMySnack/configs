@@ -131,7 +131,4 @@ super + {Left,Down,Up,Right}
 ##
 
 super + q
-	$HOME/.config/dotfiles/lockbsp
-
-super + alt + 9
-	xfce4-screenshooter
+	lockbsp	
