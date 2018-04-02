@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## repo location
+repo=$HOME/repositories/configs
+
 ## arrays
 apps=(bspwm gtk-3.0 neofetch latexmk polybar sxhkd termite)
 apps_configs=(bspwm/bspwmrc gtk-3.0/gtk.css neofetch/config.conf latexmk/latexmkrc polybar/config polybar/launch.sh sxhkd/sxhkdrc termite/config)
@@ -35,7 +38,7 @@ for i in ${apps_configs[@]} ; do
 	else
 		echo "... $i doesn't exist"
 	fi
-	if ln -sf $HOME/repositories/configs/$i $HOME/.config/$i ; then
+	if ln -s $repo/$i $HOME/.config/$i ; then
 		echo "=> $i symlink success"
 	else
 		echo "[X] $i symlink failed"
@@ -45,10 +48,10 @@ done
 ## symlink $HOME configs
 C=0
 while [ $C -lt ${#home[@]} ] ; do
-	if ln -sf $HOME/repositories/configs/${home_configs[$C]} $HOME/${home[$C]} ; then
+	if ln -s $repo/${home_configs[$C]} $HOME/${home[$C]} ; then
 		echo "=> ${home_configs[$C]} symlink success"
 	else
 		echo "[X] ${home_configs[$C]} symlink failed"
 	fi
-	let C=C+1
+	let C++
 done
