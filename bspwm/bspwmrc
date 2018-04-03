@@ -3,7 +3,7 @@ feh --bg-scale $HOME/media/wallpapers/wallpaper.jpg &
 sxhkd &
 numlockx on &
 $HOME/.config/polybar/launch.sh &
-termite &
+st &
 compton -f -b &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
