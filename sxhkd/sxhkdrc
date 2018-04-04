@@ -1,46 +1,58 @@
-#
-# wm independent hotkeys
-#
+###################
+## custom things ##
+###################
 
-# terminal emulator
+## terminal
 super + Return
 	st
-
+## volume down 5
 super + Down
 	pamixer -d 5
-
+## volume up 5
 super + Up
 	pamixer -i 5
-
-# program launcher
+## dmenu start customised
 super + @space
 	dmenu_run -fn 'AnonymousPro:pixelsize=12' -sb '#f5f5f5' -sf '#000000' -nb '#000000' -nf '#f5f5f5'
+## backlight down 5
+super + Left
+	xbacklight -dec 5
+## backlight up 5
+super + Right
+	xbacklight -inc 5
+## lock screen
+super + q
+	$HOME/bin/lockbsp
 
-# make sxhkd reload its configuration files:
+##################
+## sxhkd things ##
+##################
+
+## reload sxhkd config 
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+##################
+## bspwm things ##
+##################
 
-# quit bspwm normally
+## quit bspwm normally
 super + alt + Escape
 	bspc quit
 
-# close and kill
+## close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+## alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+## if the current node is automatic, send it to the last manual, otherwise pull the last leaf
 super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
-# swap the current node and the biggest node
+## swap the current node and the biggest node
 super + g
 	bspc node -s biggest
 
@@ -122,13 +134,6 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-##
-# custom lock
-##
-
-super + q
-	$HOME/bin/lockbsp
+#################
+## hELLO wORLD ##
+#################
