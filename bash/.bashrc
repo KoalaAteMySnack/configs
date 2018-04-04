@@ -11,6 +11,7 @@ PS1='[\u@\h \W]\$ '
 screenfetch
 
 alias mirrors="mirrorListGrab"
+alias clipdel="rm -r $XDG_RUNTIME_DIR/clipmenu*"
 
 shredthis(){
 	if [[ -f $1 ]]

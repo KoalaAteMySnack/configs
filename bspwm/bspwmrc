@@ -3,6 +3,7 @@ feh --bg-scale $HOME/media/wallpapers/wallpaper.jpg &
 sxhkd &
 numlockx on &
 $HOME/.config/polybar/launch.sh &
+$HOME/apps/clipmenu/clipmenud &
 st &
 compton -f -b &
 

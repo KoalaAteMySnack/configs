@@ -24,6 +24,9 @@ super + Right
 super + q
 	$HOME/bin/lockbsp
 
+super + i
+	$HOME/apps/clipmenu/clipmenu -fn 'AnonymousPro:pixelsize=12' -sb '#f5f5f5' -sf '#000000' -nb '#000000' -nf '#f5f5f5'
+
 ##################
 ## sxhkd things ##
 ##################
