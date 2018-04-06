@@ -12,6 +12,8 @@ screenfetch
 
 alias mirrors="mirrorListGrab"
 alias clipdel="rm -r $XDG_RUNTIME_DIR/clipmenu*"
+alias weather="curl wttr.in/sydney"
+alias clb='printf "\033c"'
 
 shredthis(){
 	if [[ -f $1 ]]
