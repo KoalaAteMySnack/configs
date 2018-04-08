@@ -4,10 +4,10 @@
 repo=$HOME/repositories/configs
 
 ## arrays
-apps=(bspwm gtk-3.0 neofetch latexmk polybar sxhkd termite)
-apps_configs=(bspwm/bspwmrc gtk-3.0/gtk.css neofetch/config.conf latexmk/latexmkrc polybar/config polybar/launch.sh sxhkd/sxhkdrc termite/config)
-home=(.bashrc .bash_profile .vimrc .xinitrc)
-home_configs=(bash/.bashrc bash/.bash_profile vim/.vimrc xorg/.xinitrc)
+apps=(bspwm gtk-3.0 latexmk mutt neofetch polybar sxhkd termite)
+apps_configs=(bspwm/bspwmrc gtk-3.0/gtk.css latexmk/latexmkrc neofetch/config.conf mutt/muttrc polybar/config polybar/launch.sh sxhkd/sxhkdrc termite/config)
+home=(.bashrc .bash_profile .offlineimaprc .vimrc .xinitrc)
+home_configs=(bash/.bashrc bash/.bash_profile offlineimaprc/.offlineimaprc vim/.vimrc xorg/.xinitrc)
 
 ## check if the config directories exist inside of $HOME/.config
 for i in ${apps[@]} ; do
