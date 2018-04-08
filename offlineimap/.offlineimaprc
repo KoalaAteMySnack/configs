@@ -1,0 +1,19 @@
+[general]
+accounts = TEST
+starttls = yes
+ssl = yes
+
+[Account TEST]
+localrepository = TEST-local
+remoterepository = TEST-remote
+
+[Repository TEST-local]
+type = MailDir
+localfolders = /home/USER/.mail/TEST@test.com
+
+[Repository TEST-remote]
+type = IMAP
+remotehost = remote.hosting.com
+remoteuser = TEST@test.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda folder: folder in ['INBOX', 'INBOX.Sent']

@@ -1,0 +1,34 @@
+source /home/USER/.mutt/aliases
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set imap_user='TEST@test.com'
+
+set from='TEST@test.com'
+set realname='Real Name'
+
+set mbox_type=Maildir
+set folder='/home/USER/.mail/TEST@test.com'
+set spoolfile='+INBOX'
+set record='+INBOX.Sent'
+
+set header_cache='/home/USER/.mutt/cache/headers'
+set message_cachedir='/home/USER/.mutt/cache/bodies'
+set certificate_file='/home/USER/.mutt/certificates'
+
+set smtp_url='smtps://TEST@test.com@remote.hosting.com:465'
+
+set move=no
+set imap_keepalive=10
+
+auto_view text/plain
+alternative_order text/enriched text/html text/plain
+
+set sort='reverse-date'
+set editor=vim
+set date_format='%m/%d %I:%M'
+
+set signature='/home/USER/.mutt/signature'
+
+bind index G imap-fetch-mail
