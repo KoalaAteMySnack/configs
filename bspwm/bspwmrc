@@ -18,14 +18,11 @@ bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a Vlc desktop='^4'
-bspc rule -a ReText desktop='^9' follow=on
-bspc rule -a MuPDF desktop='^5'
-bspc rule -a Chromium desktop='^2'follow=on
 bspc rule -a Eclipse desktop='^3' follow=on
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc rule -a Atom desktop='^9' follow=on
+bspc rule -a MuPDF desktop='^5'
 bspc rule -a Dia desktop='^9' follow=on
-bspc rule -a Google-chrome desktop='^2' follow=on
 bspc rule -a libreoffice-writer desktop='^3' follow=on
+bspc rule -a Hexchat desktop='^4' follow=on
+bspc rule -a qutebrowser desktop='^4' follow=on
+bspc rule -a Chromium desktop='^2'follow=on
+bspc rule -a Google-chrome desktop='^2' follow=on

@@ -21,5 +21,9 @@ autocmd FileType tex inoremap ;s \section{}
 autocmd FileType tex inoremap ;ss \subsection{}
 autocmd FileType tex inoremap ;sss \subsubsection{}
 autocmd FileType tex inoremap ;c \begin{center}<Enter><Enter>\end{center}
-autocmd FileType tex inoremap ;i \includegraphics[scale=1]{}
+autocmd FileType tex inoremap ;g \includegraphics[scale=1]{}
 autocmd FileType tex inoremap ;t \begin{tabular}{\| X \| X \| X \|}<Enter><Enter>X & X & X<Enter><Enter>\end{tabular}
+autocmd FileType tex inoremap ;i \textit{}
+autocmd FileType tex inoremap ;b \textbf{}
+autocmd FileType tex inoremap ;u \underline{}
+autocmd FileType tex inoremap ;p \usepackage{}
