@@ -16,6 +16,10 @@ autocmd FileType html inoremap ;ol <ol></ol><Esc>T>i
 autocmd FileType html inoremap ;p <p></p><Esc>T>i
 autocmd FileType html inoremap ;a <a href="#"></a><Esc>T#i
 autocmd FileType html inoremap ;im <img src="#"/><Esc>T#i
+autocmd FileType html inoremap ;h1 <h1></h1><Esc>T<i
+autocmd FileType html inoremap ;h2 <h2></h2><Esc>T<i
+autocmd FileType html inoremap ;h3 <h3></h3><Esc>T<i
+autocmd FileType html inoremap ;h4 <h4></h4><Esc>T<i
 
 autocmd FileType tex inoremap ;s \section{}
 autocmd FileType tex inoremap ;ss \subsection{}
