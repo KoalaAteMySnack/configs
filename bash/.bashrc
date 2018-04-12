@@ -6,9 +6,10 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
+PS1='\W [$] '
 
-screenfetch
+neofetch
 
 alias mirrors="mirrorListGrab"
 alias clipdel="rm -r $XDG_RUNTIME_DIR/clipmenu*"
