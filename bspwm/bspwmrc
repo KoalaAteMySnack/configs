@@ -22,8 +22,10 @@ bspc rule -a Eclipse desktop='^3' follow=on
 bspc rule -a MuPDF desktop='^5'
 bspc rule -a Dia desktop='^9' follow=on
 bspc rule -a Pencil desktop='^8' follow=on
-bspc rule -a libreoffice-writer desktop='^3' follow=on
 bspc rule -a Hexchat desktop='^4' follow=on
 bspc rule -a qutebrowser desktop='^4' follow=on
 bspc rule -a Chromium desktop='^2'follow=on
 bspc rule -a Google-chrome desktop='^2' follow=on
+bspc rule -a '*:libreofficedev' state=tiled desktop='^3' follow=on
+bspc rule -a '*:soffice' state=tiled desktop='^3' follow=on
+bspc rule -a libreoffice-writer state=tiled desktop='^3' follow=on
