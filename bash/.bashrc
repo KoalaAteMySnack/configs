@@ -1,17 +1,11 @@
 #
 # ~/.bashrc
 #
-
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 PWD=$(pwd)
 PS1='$PWD :$: '
-
-neofetch
-
+alias ls='ls --color=auto'
 alias mirrors="mirrorListGrab"
 alias clipdel="rm -r $XDG_RUNTIME_DIR/clipmenu*"
 alias weather="curl wttr.in/sydney"
@@ -26,14 +20,6 @@ alias llr='ls -lr'
 alias llt='ls -lt'
 alias llar='ls -lar'
 alias llat='ls -lat'
-
-ifw(){
-	sudo iftop -i wlp2s0
-}
-
-tcpw(){
-	sudo tcpdump -i wlp2s0 | grep $1
-}
 
 shredthis(){
 	if [[ -f $1 ]]
@@ -53,6 +39,14 @@ shredthis(){
 	fi
 }
 
+ifw(){
+	sudo iftop -i wlp2s0
+}
+
+tcpw(){
+	sudo tcpdump -i wlp2s0 | grep $1
+}
+
 muttrc(){
 	mutt -F $HOME/.mutt/muttrc.$1
 }
@@ -60,3 +54,9 @@ muttrc(){
 ytmp3(){
 	youtube-dl --extract-audio --audio-format mp3 $1 -o "$HOME/media/youtube/$2.%(ext)s"
 }
+
+googledns(){
+	echo -e "nameserver\t8.8.8.8\nnameserver\t8.8.4.4" | sudo tee /etc/resolv.conf
+}
+
+neofetch
