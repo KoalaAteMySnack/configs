@@ -58,5 +58,5 @@ muttrc(){
 }
 
 ytmp3(){
-	youtube-dl --extract-audio --audio-format mp3 $1 -o "$HOME/media/youtube/$2"
+	youtube-dl --extract-audio --audio-format mp3 $1 -o "$HOME/media/youtube/$2.%(ext)s"
 }
